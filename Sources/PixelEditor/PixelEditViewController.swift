@@ -217,7 +217,7 @@ public final class PixelEditViewController : UIViewController {
       root: do {
 
         if editingStack == nil {
-          editingStack = SquareEditingStack.init(
+          editingStack = EditingStack.init(
             source: imageSource,
             previewSize: CGSize(width: view.bounds.width, height: view.bounds.width),
             colorCubeStorage: colorCubeStorage
@@ -453,7 +453,9 @@ public final class PixelEditViewController : UIViewController {
 
       navigationItem.setHidesBackButton(true, animated: false)
       navigationItem.rightBarButtonItem = doneButton
+      navigationItem.rightBarButtonItem?.tintColor = UIColor.white
       navigationItem.leftBarButtonItem = cancelButton
+      navigationItem.leftBarButtonItem?.tintColor = UIColor.white
       
       didReceive(action: .setTitle(""))
 
